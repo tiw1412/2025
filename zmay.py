@@ -11,10 +11,28 @@ class field:
         for i in range(self.width):
             astr.append(self.mainsymb)
         for i in range(self.height):
-            print(str(astr))
-        self.gen.append(astr)
-        return(self.gen)
+            self.gen.append(astr)
+        return self.gen
+
+
+hght = 0
+wght = 0
+def prnfre(hght, wght):
+    while True:
+        print(chto[hght][wght], end=' ')
+        wght += 1
+        if wght == mainmap.width:
+            wght = 0
+            hght += 1
+            print('')
+        if hght == mainmap.height:
+            break
 
 mainmap = field(16, 16, '✡', '☪', '☪')
 mainmap.pr_cl()
-print(mainmap.pr_cl())
+chto = mainmap.pr_cl()
+print(chto)
+print('--')
+prnfre(hght, wght)
+chto[0][1] = 'z'
+prnfre(hght, wght)
